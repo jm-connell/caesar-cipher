@@ -6,10 +6,17 @@ fn main() {
 
     // Display option menu
     loop {
-        println!("Choose an option:");
-        println!("1. Encrypt message");
-        println!("2. Decrypt message");
-        println!("3. Quit");
+        println!(" --------------------");
+        println!("| 1. Encrypt message |");
+        println!("| 2. Decrypt message |");
+        println!("| 3. Quit            |");
+        println!(" --------------------");
+        print!("Choose an option: ");
+
+        match io::stdout().flush() {
+            Ok(_) => (),
+            Err(error) => println!("{}", error),
+        }
 
         let mut menu_choice: u32 = get_choice();
 
@@ -17,7 +24,7 @@ fn main() {
             1 => { encrypt(); }
             2 => { decrypt(); }
             3 => {
-                println!(" --------\n| Quitting... |\n --------");
+                println!("\n -------------\n| Quitting... |\n -------------\n");
                 break
             }
             _ => println!("Invalid choice. Please choose 1, 2, or 3."),
@@ -36,7 +43,6 @@ fn encrypt() {
         Err(error) => println!("{}", error),
     }
     io::stdin().read_line(&mut message).expect("Error reading input");
-    println!("");
 
     // Get encryption key
     let mut key = get_key();
@@ -56,7 +62,7 @@ fn encrypt() {
     }
 
     // Display encrypted message
-    println!(" -------------------");
+    println!("\n -------------------");
     println!("| Encrypted Message |");
     println!(" -------------------");
     println!("{}", output);
@@ -72,7 +78,6 @@ fn decrypt() {
         Err(error) => println!("{}", error),
     }
     io::stdin().read_line(&mut message).expect("Error reading input");
-    println!("");
 
     // Get encryption key
     let mut key = get_key();
@@ -91,7 +96,7 @@ fn decrypt() {
     }
 
     // Display decrypted message
-    println!(" -------------------");
+    println!("\n -------------------");
     println!("| Decrypted Message |");
     println!(" -------------------");
     println!("{}", output);
