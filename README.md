@@ -4,7 +4,7 @@ This is a program written in Rust that gets a string input from the user to eith
 
 I created this project to learn about Rust. It makes use of functions, variable references, loops, and basic error checking.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/dhh2IE_2gys)
 
 # Development Environment
 

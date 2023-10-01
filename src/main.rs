@@ -2,8 +2,10 @@ use std::io;
 use std::io::{Write};
 
 fn main() {
-    println!("\n ----------------------------------\n| Caesar Cipher Encryption Program |\n ----------------------------------\n");
-
+    println!("\n ----------------------------------");
+    println!("| Caesar Cipher Encryption Program |");
+    println!(" ----------------------------------");
+    
     // Display option menu
     loop {
         println!(" --------------------");
