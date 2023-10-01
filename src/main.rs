@@ -18,7 +18,7 @@ fn main() {
             Err(error) => println!("{}", error),
         }
 
-        let mut menu_choice: u32 = get_choice();
+        let menu_choice: u32 = get_choice();
 
         match menu_choice {
             1 => { encrypt(); }
@@ -45,7 +45,7 @@ fn encrypt() {
     io::stdin().read_line(&mut message).expect("Error reading input");
 
     // Get encryption key
-    let mut key = get_key();
+    let key = get_key();
 
     // Encrypt message
     let mut output = String::new();
@@ -80,7 +80,7 @@ fn decrypt() {
     io::stdin().read_line(&mut message).expect("Error reading input");
 
     // Get encryption key
-    let mut key = get_key();
+    let key = get_key();
 
     let mut output = String::new();
 
